@@ -1,0 +1,67 @@
+﻿<section class="vh-100">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            @if (ViewBag.Error != null)
+            {
+                <div class="text-center text-lg-start mt-4 pt-2">
+                    <div class="alert alert-danger">@ViewBag.Error</div>
+                </div>
+            }
+
+            <a asp-controller="Usuario" asp-action="PrecargaUsers" class="btn btn-primary col-2">Precargar Usuarios</a>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <form action="/Usuario/Login" method="post">
+
+                    <!-- Titulo -->
+                    <div class="form-outline mb-4">
+                        <h1>Hotel Managment</h1>
+                    </div>
+
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="txtUsuario">Correo electronico:</label>
+                        <input type="email" class="form-control form-control-lg"
+                               id="txtUsuario" required minlength="4" value="" name="email" placeholder="Correo electronico..." />
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="form-outline mb-3">
+                        <label class="form-label" for="txtPassword">Contraseña:</label>
+                        <input type="password" class="form-control form-control-lg"
+                               id="txtPassword" required minlength="2" value="" name="password" placeholder="Contraseña..." />
+                    </div>
+                   
+                    @if (ViewBag.Mensaje != null)
+                    {
+                        <div class="text-center text-lg-start mt-4 pt-2">
+
+                            <div class="alert alert-danger">@ViewBag.Mensaje</div>
+
+                        </div>
+                    }
+
+                    <!-- Boton de Login -->
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <button type="submit" id="btnIniciarSesion" class="btn btn-primary btn-lg"
+                                style="padding-left: 2.5rem; padding-right: 2.5rem;">
+                            Iniciar sesion
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<style>
+    body {
+        color: #e7eaf6;
+        background: #455d7a;
+        
+        font-family: 'Open Sans', sans-serif;
+        
+    }
+</style>
+

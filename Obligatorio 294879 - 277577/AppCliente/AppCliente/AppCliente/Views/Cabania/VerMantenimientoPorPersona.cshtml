@@ -1,0 +1,51 @@
+﻿@model IEnumerable<AppCliente.Models.VMMantenimientoPorPersona>
+
+@{
+    ViewData["Title"] = "VerMantenimientoPorPersona";
+}
+
+<h1>VerMantenimientoPorPersona</h1>
+<h2>Consulta 2</h2>
+<form action="/Cabania/VerMantenimientoPorPersona">
+     <input type="number" name="min" placeholder="Capacidad menor" class="form-control form-input" />
+    <input type="number" name="max" placeholder="Capacidad mayor" class="form-control form-input" />
+    <button type="submit" class="btn btn-primary secondary-button">Buscar</button>
+    
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombrePersona)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MontoTotal)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null) {
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombrePersona)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MontoTotal)
+                    </td>
+
+                </tr>
+            }
+
+        }
+        else{
+        <tr>
+            <td>
+                No hay ningun resultado que mostrar
+            </td>
+
+        </tr>
+        }
+    </tbody>
+</table>

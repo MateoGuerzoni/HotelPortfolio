@@ -1,0 +1,152 @@
+﻿<head>
+    <link rel="stylesheet" href="~/css/campaign.css" />
+</head>
+
+@model IEnumerable<AppCliente.Models.VMCabania>
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+}
+
+<h1 class="primary-text">Todas las Cabañas</h1>
+
+<h4 class="secondary-text">Buscar:</h4>
+<br />
+<div class="d-flex">
+    <form class="col-md-3 d-flex" action="/Cabania/BuscarPorNombre">
+        <input type="text" name="Nombre" placeholder="Ingrese su nombre" class="form-input" />
+        <button class="btn btn-secondary secondary-button" type="submit">Buscar</button>
+    </form>
+
+    <form class="col-md-3 d-flex" action="/Cabania/BuscarPorTipo">
+        <select name="NombreTipo" class="form-select">
+            @if (ViewBag.Tipos != null)
+            {
+                @foreach (var item in ViewBag.Tipos)
+                {
+                    <option value="@item.Nombre">@item.Nombre</option>
+                }
+            }
+            else
+            {
+                <option>--------</option>
+            }
+        </select>
+        <button class="btn btn-secondary secondary-button" type="submit">Buscar</button>
+    </form>
+
+    <form class="col-md-3 d-flex" action="/Cabania/BuscarPorCantidadMax">
+        <input type="number" name="MaxHuespedes" placeholder="Ingrese la cantidad" class="form-input" />
+        <button class="btn btn-secondary secondary-button" type="submit">Buscar</button>
+    </form>
+
+    <form class="col-md-3 d-flex" action="/Cabania/BuscarPorEstado">
+        <select name="Estado" class="form-select">
+            <option value="true">Habilitado</option>
+            <option value="false">Deshabilitado</option>
+        </select>
+        <button class="btn btn-secondary secondary-button" type="submit">Buscar</button>
+    </form>
+
+
+    
+   
+</div>
+<br />
+<p>
+    <a>
+        <b>Consulta 1</b>
+    </a>
+    <form class="col-md-3 d-flex" action="/Cabania/Consulta1">
+        <input type="number" name="monto" placeholder="Ingrese el costo" class="form-input" />
+        <button class="btn btn-secondary secondary-button" type="submit">Buscar</button>
+    </form>
+    <br />
+    <form class="col-md-3 d-flex" action="/Cabania/Index">
+        <button class="btn btn-secondary secondary-button" type="submit">Borrar Filtros</button>
+    </form>
+</p>
+
+
+<p>
+    <a class="btn btn-primary secondary-button" asp-action="Create">Crear Cabaña</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th class="secondary-text">
+                @Html.DisplayNameFor(model => model.numHabitacion)
+            </th>
+            <th class="secondary-text">
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th class="secondary-text">
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th class="secondary-text">
+                @Html.DisplayNameFor(model => model.TieneJacuzzi)
+            </th>
+            <th class="secondary-text">
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th class="secondary-text">
+                @Html.DisplayNameFor(model => model.MaxHuespedes)
+            </th>
+            <th class="secondary-text">
+                @Html.DisplayNameFor(model => model.TipoId)
+            </th>
+            <th class="secondary-text">
+                @Html.DisplayNameFor(model => model.Foto)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="secondary-text">
+                        @Html.DisplayFor(modelItem => item.numHabitacion)
+                    </td>
+                    <td class="secondary-text">
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td class="secondary-text">
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td class="secondary-text">
+                        @Html.DisplayFor(modelItem => item.TieneJacuzzi)
+                    </td>
+                    <td class="secondary-text">
+                        @Html.DisplayFor(modelItem => item.Estado)
+                    </td>
+                    <td class="secondary-text">
+                        @Html.DisplayFor(modelItem => item.MaxHuespedes)
+                    </td>
+                    <td class="secondary-text">
+                        @Html.DisplayFor(modelItem => item.TipoId)
+                    </td>
+                    <td class="secondary-text">
+                        @Html.DisplayFor(modelItem => item.Foto)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Realizar", "AgregarMantenimiento", new {  id=item.numHabitacion }) |
+                        @Html.ActionLink("Ver", "VerMantenimiento", new { id=item.numHabitacion})
+                    </td>
+                </tr>
+            }
+
+        }
+        else
+        {
+            <tr>
+                <td>
+                    <p class="secondary-text">No hay Cabañas que cumplan con el/los filtros</p>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

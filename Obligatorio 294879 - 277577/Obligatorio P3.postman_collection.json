@@ -1,0 +1,646 @@
+{
+	"info": {
+		"_postman_id": "d4db476f-723e-4c70-a365-fc16df932a16",
+		"name": "Obligatorio P3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26563854"
+	},
+	"item": [
+		{
+			"name": "Cabañas",
+			"item": [
+				{
+					"name": "Obtener  todas las Cabañas",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hdGVvQG9ydC5jb20iLCJuYmYiOjE2ODY5NDAzNzIsImV4cCI6MTY4OTUzMjM3MiwiaWF0IjoxNjg2OTQwMzcyfQ.GaBAzjUR2xTT0v2bFFo-UmEKazan50dhc4qjQdhowNE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:7215/api/Cabanias",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7215",
+							"path": [
+								"api",
+								"Cabanias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Cabaña x Nombre",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hdGVvQG9ydC5jb20iLCJuYmYiOjE2ODY5NDAzNzIsImV4cCI6MTY4OTUzMjM3MiwiaWF0IjoxNjg2OTQwMzcyfQ.GaBAzjUR2xTT0v2bFFo-UmEKazan50dhc4qjQdhowNE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7215/api/Cabanias/name/Deluxe",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7215",
+							"path": [
+								"api",
+								"Cabanias",
+								"name",
+								"Deluxe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Tipo x Nombre",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7215/api/Cabanias/tipo/Deluxe",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7215",
+							"path": [
+								"api",
+								"Cabanias",
+								"tipo",
+								"Deluxe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Cabaña x Capacidad",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7215/api/Cabanias/huespedes/3",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7215",
+							"path": [
+								"api",
+								"Cabanias",
+								"huespedes",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Cabaña x Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hdGVvQG9ydC5jb20iLCJuYmYiOjE2ODY5NDAzNzIsImV4cCI6MTY4OTUzMjM3MiwiaWF0IjoxNjg2OTQwMzcyfQ.GaBAzjUR2xTT0v2bFFo-UmEKazan50dhc4qjQdhowNE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7215/api/Cabanias/id/5",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7215",
+							"path": [
+								"api",
+								"Cabanias",
+								"id",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Mantenimiento x Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7215/api/Cabanias/mantenimiento/4",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7215",
+							"path": [
+								"api",
+								"Cabanias",
+								"mantenimiento",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Mantenimiento x Id , Fechas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7215/api/Cabanias/mantenimiento/1,2023-06-16T18:59:52.6903196,2023-06-22T18:59:52.6903196",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7215",
+							"path": [
+								"api",
+								"Cabanias",
+								"mantenimiento",
+								"1,2023-06-16T18:59:52.6903196,2023-06-22T18:59:52.6903196"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alta Cabania",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hdGVvQG9ydC5jb20iLCJuYmYiOjE2ODY5NDAzNzIsImV4cCI6MTY4OTUzMjM3MiwiaWF0IjoxNjg2OTQwMzcyfQ.GaBAzjUR2xTT0v2bFFo-UmEKazan50dhc4qjQdhowNE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"tipo\": {\r\n            \"id\": 1,\r\n            \"nombre\": \"Deluxe\",\r\n            \"descripcion\": \"Cabanias mas costosas\",\r\n            \"costoPorHuesped\": 500\r\n        },\r\n        \"tipoId\": 1,\r\n        \"nombre\": \"Crater\",\r\n        \"descripcion\": \"cabanias en el fondo de un crater\",\r\n        \"tieneJacuzzi\": false,\r\n        \"estado\": false,\r\n        \"maxHuespedes\": 12,\r\n        \"foto\": \"foto1\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7215/api/Cabanias",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7215",
+							"path": [
+								"api",
+								"Cabanias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alta Mantenimiento",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hdGVvQG9ydC5jb20iLCJuYmYiOjE2ODY5NDAzNzIsImV4cCI6MTY4OTUzMjM3MiwiaWF0IjoxNjg2OTQwMzcyfQ.GaBAzjUR2xTT0v2bFFo-UmEKazan50dhc4qjQdhowNE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"fecha\":  \"2023-06-22T12:59:52.6903196\",\r\n   \"descripcion\":  \"Reparacion de canierias\",\r\n   \"costo\": 500,\r\n   \"nombreFuncionario\": \"Zombo\",\r\n    \"cabaniaID\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7215/api/Cabanias/mantenimiento/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7215",
+							"path": [
+								"api",
+								"Cabanias",
+								"mantenimiento",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Mantenimiento entre valores",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hdGVvQG9ydC5jb20iLCJuYmYiOjE2ODY5NDAzNzIsImV4cCI6MTY4OTUzMjM3MiwiaWF0IjoxNjg2OTQwMzcyfQ.GaBAzjUR2xTT0v2bFFo-UmEKazan50dhc4qjQdhowNE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "javascript"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7215/api/Cabanias/2,1000",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7215",
+							"path": [
+								"api",
+								"Cabanias",
+								"2,1000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Cabania < Valor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7215/api/Cabanias/1000",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7215",
+							"path": [
+								"api",
+								"Cabanias",
+								"1000"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tipos",
+			"item": [
+				{
+					"name": "Obtener todos los Tipos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7215/api/Tipos",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7215",
+							"path": [
+								"api",
+								"Tipos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alta Tipo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hdGVvQG9ydC5jb20iLCJuYmYiOjE2ODY5NDAzNzIsImV4cCI6MTY4OTUzMjM3MiwiaWF0IjoxNjg2OTQwMzcyfQ.GaBAzjUR2xTT0v2bFFo-UmEKazan50dhc4qjQdhowNE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Rota\",\r\n  \"descripcion\": \"no esta funcionando\",\r\n  \"costoPorHuesped\": 20\r\n}"
+						},
+						"url": {
+							"raw": "https://localhost:7215/api/Tipos",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7215",
+							"path": [
+								"api",
+								"Tipos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Tipo x Nombre",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hdGVvQG9ydC5jb20iLCJuYmYiOjE2ODY5NDAzNzIsImV4cCI6MTY4OTUzMjM3MiwiaWF0IjoxNjg2OTQwMzcyfQ.GaBAzjUR2xTT0v2bFFo-UmEKazan50dhc4qjQdhowNE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7215/api/Tipos/name/Aldana",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7215",
+							"path": [
+								"api",
+								"Tipos",
+								"name",
+								"Aldana"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar Tipo x Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hdGVvQG9ydC5jb20iLCJuYmYiOjE2ODY5NDAzNzIsImV4cCI6MTY4OTUzMjM3MiwiaWF0IjoxNjg2OTQwMzcyfQ.GaBAzjUR2xTT0v2bFFo-UmEKazan50dhc4qjQdhowNE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Aldana sucia\",\r\n  \"descripcion\": \"De verdad no se bania\",\r\n  \"costoPorHuesped\": 150\r\n}"
+						},
+						"url": {
+							"raw": "https://localhost:7215/api/Tipos/12",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7215",
+							"path": [
+								"api",
+								"Tipos",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar Tipo x Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hdGVvQG9ydC5jb20iLCJuYmYiOjE2ODY5NDAzNzIsImV4cCI6MTY4OTUzMjM3MiwiaWF0IjoxNjg2OTQwMzcyfQ.GaBAzjUR2xTT0v2bFFo-UmEKazan50dhc4qjQdhowNE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:7215/api/Tipos/4",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7215",
+							"path": [
+								"api",
+								"Tipos",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Obtener todos los Usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7215/api/Usuarios",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7215",
+							"path": [
+								"api",
+								"Usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Email\": \"mateo@ort.com\",\r\n    \"Password\": \"mateo123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7215/api/Usuarios/Login",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7215",
+							"path": [
+								"api",
+								"Usuarios",
+								"Login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "nombreCabania",
+			"value": "Deluxe"
+		},
+		{
+			"key": "nombreTipo",
+			"value": "Clasica",
+			"type": "string"
+		},
+		{
+			"key": "cantHuespedes",
+			"value": "3"
+		},
+		{
+			"key": "Fecha1",
+			"value": "2023-01-01"
+		},
+		{
+			"key": "Fecha2",
+			"value": "2023-12-12"
+		}
+	]
+}

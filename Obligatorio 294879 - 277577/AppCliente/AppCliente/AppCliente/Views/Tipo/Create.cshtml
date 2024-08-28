@@ -1,0 +1,54 @@
+﻿<head>
+    <link rel="stylesheet" href="~/css/campaign.css" />
+</head>
+
+@model AppCliente.Models.VMTipo
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+}
+
+<h1 class="primary-text">Crear tipo</h1>
+<hr />
+<br />
+<h4>Ingrese los siguientes datos:</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control form-input" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="Descripcion" class="control-label"></label>
+                <input asp-for="Descripcion" class="form-control form-input" />
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="CostoPorHuesped" class="control-label"></label>
+                <input asp-for="CostoPorHuesped" class="form-control form-input" />
+                <span asp-validation-for="CostoPorHuesped" class="text-danger"></span>
+            </div>
+            <br />
+            <hr />
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-primary secondary-button" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a asp-action="Index" class="link-text">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

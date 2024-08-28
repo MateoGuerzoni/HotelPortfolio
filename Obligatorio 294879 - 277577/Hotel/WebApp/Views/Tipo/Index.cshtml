@@ -1,0 +1,88 @@
+﻿@model IEnumerable<LogicaNegocio.Entidades.Tipo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@if (ViewBag.Error != null)
+{
+    <div class="text-center text-lg-start mt-4 pt-2">
+        <div class="alert alert-danger">@ViewBag.Error</div>
+    </div>
+}
+
+@if (ViewBag.Success != null)
+{
+    <div class="text-center text-lg-start mt-4 pt-2">
+        <div class="alert alert-success">@ViewBag.Success</div>
+    </div>
+}
+
+<h1>Tipos</h1>
+<hr />
+<br />
+@ViewBag.Error
+@ViewBag.Success
+<form class="d-flex" action="/Tipo/BuscarPorNombre">
+    <input type="text" name="Nombre" class="form-control w-25 col-md-9"  placeholder="Ingrese nombre" />
+    <button type="submit" class="btn btn-secondary col-md-1">Buscar</button>
+</form>
+<br />
+<p>
+    <a asp-action="Create" class="btn btn-primary">Crear Tipo</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CostoPorHuesped)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if(Model != null)
+        {
+            
+        @foreach (var item in Model) {
+        <tr>
+             <td>
+                 @Html.DisplayFor(modelItem => item.Id)
+             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CostoPorHuesped)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new {  name=item.Nombre }) |
+                
+                @Html.ActionLink("Delete", "Borrar", new {  id=item.Id  })
+            </td>
+                </tr>
+            }
+        }
+        else
+        {
+
+            <tr>
+                <td  >@ViewBag.Message</td>
+            </tr>
+            }
+    </tbody>
+
+</table>

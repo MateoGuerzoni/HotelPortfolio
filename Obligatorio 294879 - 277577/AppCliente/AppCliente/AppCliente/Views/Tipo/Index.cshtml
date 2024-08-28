@@ -1,0 +1,91 @@
+﻿<head>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+@model IEnumerable<AppCliente.Models.VMTipo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+}
+
+<h1 class="primary-text">Tipos</h1>
+<hr />
+<br />
+<h5>Eliminar tipo por nombre</h5>
+<div class="d-flex">
+<form class="col-md-3 d-flex" action="/Tipo/BuscarTiposPorNombre">
+    
+    <input type="text" name="nombre" placeholder="Ingrese nombre del Tipo" class="form-input" />
+    <button class="btn btn-secondary secondary-button" type="submit">Buscar</button>
+</form>
+
+
+
+</div>
+
+    <form class="col-md-3 d-flex" action="/Tipo/Index">
+        <button class="btn btn-secondary secondary-button" type="submit">Borrar Filtros</button>
+    </form>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary secondary-button">Crear Tipo</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CostoPorHuesped)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CostoPorHuesped)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "Edit", new { name = item.Nombre }) |
+                        @Html.ActionLink("Borrar", "Delete", new { name = item.Nombre })
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td>@ViewBag.Message</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@{
+}

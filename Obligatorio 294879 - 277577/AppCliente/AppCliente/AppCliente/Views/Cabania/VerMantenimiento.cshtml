@@ -1,0 +1,73 @@
+﻿<head>
+    <link rel="stylesheet" href="~/css/campaign.css" />
+</head>
+
+@model IEnumerable<AppCliente.Models.VMMantenimiento>
+
+@{
+    ViewData["Title"] = "VerMantenimiento";
+}
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+}
+
+<h1 class="primary-text">VerMantenimiento</h1>
+
+<form action="/Cabania/BuscarPorFecha">
+    <input type="hidden" name="id" value="@ViewBag.Id" />
+    
+    <input type="date" name="Fecha1" placeholder="Fecha inicial" class="form-control form-input" />
+    <input type="date" name="Fecha2" placeholder="Fecha Final" class="form-control form-input" />
+    <button type="submit" class="btn btn-primary secondary-button">Buscar</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Costo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreFuncionario)
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model!= null){
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fecha)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Costo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreFuncionario)
+                </td>
+                
+            </tr>
+            }
+        }else{
+        <tr>
+            <td>
+                No hay ningun mantenimiento entre estas fechas
+            </td>
+            
+        </tr>
+
+        }
+    </tbody>
+</table>

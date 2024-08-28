@@ -1,0 +1,92 @@
+﻿@model IEnumerable<LogicaNegocio.Entidades.Mantenimiento>
+
+@{
+    ViewData["Title"] = "VerMantenimiento";
+}
+
+@if (ViewBag.Error != null)
+{
+    <div class="text-center text-lg-start mt-4 pt-2">
+        <div class="alert alert-danger">@ViewBag.Error</div>
+    </div>
+}
+
+@if (ViewBag.Success != null)
+{
+    <div class="text-center text-lg-start mt-4 pt-2">
+        <div class="alert alert-success">@ViewBag.Success</div>
+    </div>
+}
+
+
+<h1>VerMantenimiento</h1>
+<hr />
+<br />
+
+
+<form action="/Cabania/BuscarPorFecha">
+    <input type="hidden" name="id" value="@ViewBag.Id" />
+    @foreach (var item in Model) {
+    @*<input type="hidden" name="id" value="@item.CabaniaRealizada.numHabitacion" />*@
+        break;
+    }
+    <input type="date" name="Fecha1" placeholder="Fecha inicial" />
+    <input type="date" name="Fecha2" placeholder="Fecha Final" />
+    <button type="submit">Buscar</button>
+</form>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CabaniaRealizada.numHabitacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Costo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreFuncionario)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                    @Html.DisplayFor(modelItem => item.CabaniaRealizada.numHabitacion)
+             </td>
+               
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Costo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreFuncionario)
+            </td>
+            <td>
+               
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

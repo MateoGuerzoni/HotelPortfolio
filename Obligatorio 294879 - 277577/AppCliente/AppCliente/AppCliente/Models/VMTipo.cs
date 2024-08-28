@@ -1,0 +1,10 @@
+﻿namespace AppCliente.Models
+{
+	public class VMTipo
+	{
+		public int Id { get; set; }
+		public string Nombre { get; set; }
+		public string Descripcion { get; set; }
+		public double CostoPorHuesped { get; set; }
+	}
+}

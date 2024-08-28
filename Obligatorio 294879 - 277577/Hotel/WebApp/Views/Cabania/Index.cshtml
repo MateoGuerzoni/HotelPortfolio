@@ -1,0 +1,148 @@
+﻿@model IEnumerable<LogicaNegocio.Entidades.Cabania>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@if (ViewBag.Error != null)
+{
+    <div class="text-center text-lg-start mt-4 pt-2">
+        <div class="alert alert-danger">@ViewBag.Error</div>
+    </div>
+}
+<h1>Cabañas</h1>
+<hr />
+<br />
+
+<h4>Buscar: </h4>
+<br />
+<div class="d-flex">
+
+    <form class="col-md-3" action="/Cabania/BuscarPorNombre">
+        <input type="text" name="Nombre" placeholder="Ingrese su nombre" />
+        <button class="btn btn-secondary" type="submit">Buscar</button>
+    </form>
+
+
+    <form class="col-md-3" action="/Cabania/BuscarPorTipo">
+
+        <select name="NombreTipo">
+            @foreach (var item in ViewBag.Tipos)
+            {
+                <option value="@item.Nombre">@item.Nombre</option>
+            }
+        </select>
+        <button class="btn btn-secondary" type="submit">Buscar</button>
+    </form>
+
+
+    <form class="col-md-3" action="/Cabania/BuscarPorCantidadMax">
+        <input type="number" name="MaxHuespedes" placeholder="Ingrese la cantidad " />
+        <button class="btn btn-secondary" type="submit">Buscar</button>
+    </form>
+
+
+
+
+    <form class="col-md-3" action="/Cabania/BuscarPorEstado">
+
+        <select name="Estado">
+
+            <option value="true">Habilitado</option>
+            <option value="false">Deshabilitado</option>
+        </select>
+
+        <button class="btn btn-secondary" type="submit">Buscar</button>
+    </form>
+</div>
+<br />
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Crear Cabaña</a>
+</p>
+<table class="table table-hover text-center">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.numHabitacion)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.TieneJacuzzi)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Tipo)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.MaxHuespedes)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Foto)
+            </th>
+            <th scope="col">
+                Mantenimientos
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+
+       
+        @if (Model.Count() != 0)
+        {
+
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayFor(modelItem => item.numHabitacion)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TieneJacuzzi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Estado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tipo.Nombre)
+
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MaxHuespedes)
+                    </td>
+                    <td>
+                       
+                        <img class="rounded" src="~/imagenes/@item.Foto" height="140" width="140" />
+                    </td>
+                    <td>
+                        
+                        @Html.ActionLink("Realizar", "AgregarMantenimiento", new {  id=item.numHabitacion }) |
+                        @Html.ActionLink("Ver", "VerMantenimiento", new { id=item.numHabitacion})
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+
+            <tr>
+                
+                <td>@ViewBag.Message</td>
+            </tr>
+        }
+    </tbody>
+</table>
